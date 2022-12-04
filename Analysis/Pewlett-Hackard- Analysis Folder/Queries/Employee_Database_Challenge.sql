@@ -59,3 +59,13 @@ WHERE (de.to_date = '9999-01-01') AND (e.birth_date BETWEEN '1965-01-01' AND '19
 ORDER BY e.emp_no
 
 SELECT * FROM mentorship_eligibility
+
+
+---Building count for mentorship
+SELECT count(title) "count", title
+INTO Mentorship_counts
+FROM mentorship_eligibility
+GROUP BY title
+ORDER BY count DESC;
+
+SELECT * FROM Mentorship_counts
